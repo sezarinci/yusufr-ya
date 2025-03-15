@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kişisel Web Sayfam</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&display=swap');
+        
         body {
             background-image: url('arka-plan.jpg.jpg');
             background-size: cover;
@@ -14,20 +16,16 @@
             flex-direction: column;
             align-items: center;
             height: 100vh;
-            padding: 20px;
-            box-sizing: border-box;
         }
         .title-container {
             margin-top: 20px;
             background: rgba(255, 255, 255, 0.5);
             padding: 10px 20px;
             border-radius: 10px;
-            text-align: center;
         }
         .title {
             font-size: 36px;
             font-family: 'Playfair Display', serif;
-            font-style: italic;
             color: #FF6666;
             text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
             white-space: nowrap;
@@ -36,10 +34,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 100%;
-            gap: 30px;
-            margin-top: 30px;
-            flex-wrap: wrap;
+            width: 80%;
+            gap: 50px;
+            margin-top: 50px;
         }
         .poem-container, .image-container {
             width: 340px;
@@ -84,30 +81,23 @@
             left: 10px;
             background-color: green;
             color: white;
-            padding: 10px;
+            padding: 10px 15px;
             border: none;
-            cursor: pointer;
             border-radius: 5px;
+            cursor: pointer;
         }
-        @media (max-width: 768px) {
-            .content {
-                flex-direction: column;
-                gap: 20px;
-            }
-            .poem-container, .image-container {
-                width: 90%;
-                height: auto;
-            }
-            .title {
-                font-size: 28px;
-            }
+        .audio-button:hover {
+            background-color: darkgreen;
         }
     </style>
 </head>
 <body>
     <button class="audio-button" onclick="toggleAudio()">Sana Söylemek İstediğim</button>
-    <audio id="background-music" src="sarki.mp3"></audio>
-    
+    <audio id="background-audio">
+        <source src="sarki.mp3" type="audio/mpeg">
+        Tarayıcınız ses öğesini desteklemiyor.
+    </audio>
+
     <div class="title-container">
         <div class="title">Seni Çok Seviyorum Rüya</div>
     </div>
@@ -131,9 +121,10 @@
     <div class="button-container">
         <a href="https://www.youtube.com/watch?v=yrglCUFraSk" target="_blank" class="button">Herkesin sevebileceği bir şarkı değil ama</a>
     </div>
+
     <script>
         function toggleAudio() {
-            var audio = document.getElementById("background-music");
+            var audio = document.getElementById("background-audio");
             if (audio.paused) {
                 audio.play();
             } else {
