@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kişisel Web Sayfam</title>
+    <title>Rüyayı seviyorum</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&display=swap');
-        
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
         body {
             background-image: url('arka-plan.jpg.jpg');
             background-size: cover;
@@ -24,9 +23,9 @@
             border-radius: 10px;
         }
         .title {
-            font-size: 36px;
-            font-family: 'Playfair Display', serif;
-            color: #FF6666;
+            font-size: 40px;
+            font-family: 'Great Vibes', cursive;
+            color: #D70000;
             text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
             white-space: nowrap;
         }
@@ -64,8 +63,9 @@
         }
         .button {
             display: inline-block;
-            padding: 10px 20px;
-            font-size: 18px;
+            padding: 12px 24px;
+            font-size: 20px;
+            font-weight: bold;
             background-color: #ff4d4d;
             color: white;
             text-decoration: none;
@@ -81,23 +81,18 @@
             left: 10px;
             background-color: green;
             color: white;
-            padding: 10px 15px;
+            padding: 10px;
+            font-size: 16px;
             border: none;
-            border-radius: 5px;
             cursor: pointer;
-        }
-        .audio-button:hover {
-            background-color: darkgreen;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
     <button class="audio-button" onclick="toggleAudio()">Sana Söylemek İstediğim</button>
-    <audio id="background-audio">
-        <source src="sarki.mp3" type="audio/mpeg">
-        Tarayıcınız ses öğesini desteklemiyor.
-    </audio>
-
+    <audio id="myAudio" src="sarki.mp3"></audio>
+    
     <div class="title-container">
         <div class="title">Seni Çok Seviyorum Rüya</div>
     </div>
@@ -120,11 +115,10 @@
     </div>
     <div class="button-container">
         <a href="https://www.youtube.com/watch?v=yrglCUFraSk" target="_blank" class="button">Herkesin sevebileceği bir şarkı değil ama</a>
-    </div>
-
+    <b /div>
     <script>
         function toggleAudio() {
-            var audio = document.getElementById("background-audio");
+            var audio = document.getElementById("myAudio");
             if (audio.paused) {
                 audio.play();
             } else {
